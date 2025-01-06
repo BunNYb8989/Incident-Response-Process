@@ -22,14 +22,14 @@ Post-Incident Activity: Reviewing and improving the incident response process an
 
 
 
-# Task 3
+# Task 3 Detcetion & Analysis
 What is the phase of the NIST Incident Response Framework in which incident responders are usually called to action?
 
 ```
 Detection and Analysis
 ```
 
-# Task 4- Detcetion & Analysis
+# Task 4- Containment, Eradication, and Recovery
 
 In our scenario, we are acting as members of our Incident Response Team. A member of the organisation's SOC Team has called us to investigate and remedy a potential incident impacting a Windows workstation.
 
@@ -151,7 +151,7 @@ certutil
 ```
 
 
-# Task 5---Containment, Eradication, and Recovery---
+# Task 5 
 
 remember that, as incident responders, we also need to compile a report containing all the details of the actions we've taken. Before deleting any artefact from the machine or killing any involved process, remember to keep track of filenames, folders and other details that you've encountered: these are all very important data that need to be included in our report—and that may be requested to answer the questions at the end of this task.
 
@@ -188,7 +188,24 @@ In the Run registry key, what is the name of the string value that has been adde
 DefaultApp
 ```
 
-# Task 6--Closing the Cycle
+# Task 5 Closing the Cycle 
+
+This phase involves thoroughly reviewing the incident, documenting lessons learned, and integrating these insights into the Incident Response Plan (IRP) developed during the preparation phase. 
+
+By doing so, organisations can continuously improve their readiness and resilience against future threats.
+
+And Back to Preparation
+
+this phase involves creating a comprehensive Incident Response Plan (IRP), which is pivotal for ensuring an organisation's readiness to handle cyber security incidents effectively.
+
+Implementing an EDR solution able to detect the kind of threat that we just faced (crypto miners and malicious macros).
+
+Enforcing a web-browsing control system that would prevent users from navigating to unsafe websites.
+
+Raising awareness among employees on the potential threat of macro-enabled Office files and navigating suspicious links, for example, with mandatory training on the topic.
+
+Discussing the approach of implementing a policy to block the execution of macros as a countermeasure, ensuring that this wouldn't disrupt legitimate business operations.
+
 
 The goal of an effective preparation phase is to develop an:
 
