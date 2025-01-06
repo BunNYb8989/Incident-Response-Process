@@ -8,7 +8,6 @@
 Because the main topic of this room is an advanced cyber security subject, it would be best for students to approach it after gaining basic knowledge of the most diffused cyber threats (malware, miners, C2 botnets, etc.) and their delivery vectors, and being comfortable with common cyber security terminology.
 
 
-# Task 2 -Incident ResponseLifecycle-
 
 ![66b36e2379a5d0220fc6b99e-1730828994819](https://github.com/user-attachments/assets/86ab2a57-e289-47f4-937d-9dc3b0367168)
 
@@ -22,14 +21,15 @@ Post-Incident Activity: Reviewing and improving the incident response process an
 
 
 
-# Task 3 Detcetion & Analysis
+# Task 2 Incident ResponseLifecycle-
+
 What is the phase of the NIST Incident Response Framework in which incident responders are usually called to action?
 
 ```
 Detection and Analysis
 ```
 
-# Task 4- Containment, Eradication, and Recovery
+# Task 3 Detcetion & Analysis
 
 In our scenario, we are acting as members of our Incident Response Team. A member of the organisation's SOC Team has called us to investigate and remedy a potential incident impacting a Windows workstation.
 
@@ -151,7 +151,7 @@ certutil
 ```
 
 
-# Task 5 
+# Task 4 Containment, Eradication, and Recovery
 
 remember that, as incident responders, we also need to compile a report containing all the details of the actions we've taken. Before deleting any artefact from the machine or killing any involved process, remember to keep track of filenames, folders and other details that you've encountered: these are all very important data that need to be included in our report—and that may be requested to answer the questions at the end of this task.
 
@@ -213,3 +213,9 @@ The goal of an effective preparation phase is to develop an:
 Incident Response Plan
 
 ```
+# Task 6 Conclusion
+
+ The critical insights gained from each phase, particularly from post-incident activity, must be reintegrated into the preparation phase to continually enhance the Incident Response Plan (IRP).
+
+Remember, the cycle of preparation, response, and improvement is continuous and essential for staying ahead in the ever-evolving landscape of cyber security.
+ 
